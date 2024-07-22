@@ -1,5 +1,10 @@
+
+
 import 'package:flutter/material.dart';
-import 'package:spotsball_app/lib/screens/SignIn_screens/signINUP.dart';
+
+import '../custom_widget.dart';
+
+
 
 void main() {
   runApp(const MyApp());
@@ -31,8 +36,32 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Signinup(),
+      home: homepage(),
     );
   }
 }
 
+
+
+class homepage extends StatefulWidget {
+  const homepage({super.key});
+
+  @override
+  State<homepage> createState() => _homepageState();
+}
+
+class _homepageState extends State<homepage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar:PreferredSize(
+        preferredSize: Size.fromHeight(50),
+        child: Logo_bar(
+          context: context,
+          value: 0,
+
+        ),
+      )
+    );
+  }
+}
