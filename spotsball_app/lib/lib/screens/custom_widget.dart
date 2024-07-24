@@ -92,15 +92,16 @@ Widget text_field({
   FontWeight? fontWeight,
   TextAlign? textAlign,
   Color? color,
-  int? maxlength,
+
   Border? border,
   Color? backColor,
   double? paddingSize,
   bool readOnly = false,
   required TextInputType keyboardType,
-  bool obsecureText1 = true,
+
   TextInputType? inputType,
   String? font,
+  double? radius,
   EdgeInsetsGeometry? margin,
   List<TextInputFormatter>? inputFormatters,
   // bool enabled = true,
@@ -112,7 +113,7 @@ Widget text_field({
     width: width ?? MediaQuery.of(context).size.width * 0.80,
     // margin:  margin ??  EdgeInsets.only(left: paddingSize?? 10, top: paddingSize?? 10, bottom:paddingSize?? 10,right:paddingSize?? 10),
     decoration: BoxDecoration(
-      borderRadius: BorderRadius.circular(10),
+      borderRadius: BorderRadius.circular(radius!) ?? BorderRadius.circular(10),
       // border: Border.all(color: const Color(0xffB3BBCB)),
       color: backColor ?? Colors.white,
     ),
@@ -284,6 +285,7 @@ Widget TextRoboto500_14({
   required double fontsize,
   Color? color,
   required String? text,
+  FontWeight? fontweight,
 }) {
   return Text(
     text!,
@@ -291,7 +293,7 @@ Widget TextRoboto500_14({
         textStyle: TextStyle(
             fontSize: fontsize ?? 14,
             color: color ?? Colors.white,
-            fontWeight: FontWeight.w500)),
+            fontWeight:fontweight ?? FontWeight.w500)),
   );
 }
 
@@ -379,5 +381,63 @@ Widget Logo_bar({
   ) ;
 
 }
+
+
+//More page custom widetets
+
+
+Widget MoreCards({
+  required String Imagepath,
+  required String Text,
+}){
+  return Card(
+    elevation: 4,
+
+    child: Container(
+      height: 110,
+      width: 110,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Center(child: Image.asset(Imagepath)),
+            SizedBox(
+              height: 3,
+            ),
+            Center(child: TextRoboto500_14(fontsize: 12, text: Text , color: Colors.black ))
+          ],
+        ),
+      ),
+    ),
+  );
+  
+}
+
+
+Widget Custombtn_h50_wfull({
+  required BuildContext context,
+  required text,
+  required Color textcolor,
+   Color? btncolor,
+   double? width,
+}
+){
+  return Container(
+    height: 50,
+    width: width ?? double.infinity ,
+
+    decoration: BoxDecoration(
+      color: Color(0xFF7CAB05),
+      borderRadius: BorderRadius.circular(10),
+    ),
+    child: Center(
+      child: TextRoboto600_16(fontsize: 16, text: text)
+    ),
+  );
+}
+
 
 

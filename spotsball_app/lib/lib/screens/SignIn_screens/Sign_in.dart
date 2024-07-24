@@ -75,9 +75,10 @@ class _SigninState extends State<Signin> {
                         height: 18,
                       ),
                       text_field(
+                        width: 70,
                           context: context,
                           controller: emailPhnController,
-                          obsecureText1: false,
+
                           eye: false,
                           hintText: 'Email / Mobile Number',
                           keyboardType: TextInputType.text),
