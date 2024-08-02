@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:spotsball_app/lib/screens/SignIn_screens/signINUP.dart';
+import 'package:spotsball_app/screens/SignIn_screens/signINUP.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,6 +12,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         // This is the theme of your application.
         //
